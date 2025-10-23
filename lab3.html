@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 3 - HTML Practice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 20px;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        table {
+            border-collapse: collapse;
+            width: 70%;
+            margin: 15px 0;
+            background: #fff;
+        }
+        table, th, td {
+            border: 1px solid #999;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #e0e0e0;
+        }
+        caption {
+            caption-side: top;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        img {
+            margin: 10px;
+            border-radius: 8px;
+        }
+        a {
+            color: #0066cc;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Lab 3: Working with Lists, Tables, Images, and Links</h1>
+    <p>Welcome to Lab 3! This page demonstrates various HTML features including lists, tables, images, and hyperlinks.</p>
+
+    <hr>
+
+    <!-- Ordered List -->
+    <h2>1. Ordered List (Steps to Make Coffee)</h2>
+    <ol>
+        <li>Boil water</li>
+        <li>Add coffee grounds to a mug</li>
+        <li>Pour hot water into the mug</li>
+        <li>Stir and enjoy</li>
+    </ol>
+
+    <!-- Unordered List -->
+    <h2>2. Unordered List (Favorite Fruits)</h2>
+    <ul>
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Orange</li>
+        <li>Mango</li>
+    </ul>
+
+    <!-- Nested List -->
+    <h2>3. Nested List (School Subjects)</h2>
+    <ul>
+        <li>Science
+            <ul>
+                <li>Biology</li>
+                <li>Chemistry</li>
+                <li>Physics</li>
+            </ul>
+        </li>
+        <li>Mathematics
+            <ul>
+                <li>Algebra</li>
+                <li>Geometry</li>
+            </ul>
+        </li>
+    </ul>
+
+    <hr>
+
+    <!-- Table with Caption -->
+    <h2>4. Table (Student Grades)</h2>
+    <table>
+        <caption>Student Grades for Term 1</caption>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Subject</th>
+                <th>Grade</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Afnan</td>
+                <td>Math</td>
+                <td>A</td>
+            </tr>
+            <tr>
+                <td>Anaan</td>
+                <td>Science</td>
+                <td>B+</td>
+            </tr>
+            <tr>
+                <td>khaan</td>
+                <td>History</td>
+                <td>A-</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <!-- Images -->
+    <h2>5. Images</h2>
+    <p>Below is one <strong>local image</strong> and one <strong>external image</strong>.</p>
+
+    <h3>Local Image:</h3>
+    <img src="per-1.jpg" alt="Local Sample Image" width="250">
+
+    <h3>External Image:</h3>
+    <img src="https://media.licdn.com/dms/image/v2/D5612AQEBCs0WuatahA/article-cover_image-shrink_720_1280/B56ZfyweegG0AI-/0/1752124484288?e=2147483647&v=beta&t=m6Qw4U6UMstwCAo2H17WB9dHBCWr3WBisYID_HpmRu8" alt="HTML5 Logo" width="150">
+
+    <hr>
+
+    <!-- Hyperlinks -->
+    <h2>6. Hyperlinks</h2>
+    <ul>
+        <li><a href="lab1.html">Go to Lab 1 (Internal Link)</a></li>
+        <li><a href="lab2.html">Go to Lab 2 (Internal Link)</a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">Learn HTML at MDN (External Link)</a></li>
+        <li><a href="#top">Back to Top</a></li>
+    </ul>
+
+    <hr>
+    <footer>
+        <p>&copy; 2025 Your Name | Lab 3 | <a href="lab2.html">Back to Homepage</a></p>
+    </footer>
+
+</body>
+</html>
