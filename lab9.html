@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interactive Control Panel</title>
+
+<style>
+    body{
+        font-family: Arial, sans-serif;
+        background: #111;
+        color: white;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1{
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .panel{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        margin: 20px;
+        padding: 20px;
+    }
+
+    .box{
+        width: 280px;
+        background:#1f1f1f;
+        padding: 18px;
+        border-radius: 10px;
+        text-align: center;
+        border: 1px solid #444;
+    }
+
+    button{
+        padding: 10px 15px;
+        margin: 8px;
+        border: none;
+        background: #04a6ff;
+        color: white;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+
+    button:hover{
+        background: #0077c2;
+    }
+
+    #color-box{
+        width:100%;
+        height:60px;
+        border-radius:8px;
+        margin-top:10px;
+    }
+
+    #counter-display{
+        font-size: 24px;
+        margin: 10px 0;
+    }
+
+    #clock{
+        font-size: 22px;
+        margin-top: 8px;
+    }
+</style>
+</head>
+
+<body>
+
+<h1>Interactive Control Panel</h1>
+
+<div class="panel">
+
+    <!-- BOX 1: Background Color Changer -->
+    <div class="box">
+        <h3>Background Color Changer</h3>
+        <button onclick="changeBG('red')">Red</button>
+        <button onclick="changeBG('green')">Green</button>
+        <button onclick="changeBG('blue')">Blue</button>
+        <div id="color-box"></div>
+    </div>
+
+    <!-- BOX 2: Counter (Callback + Higher-Order Function) -->
+    <div class="box">
+        <h3>Counter</h3>
+        <div id="counter-display">0</div>
+        <button onclick="useCounter(addOne)">Increase</button>
+        <button onclick="useCounter(subOne)">Decrease</button>
+    </div>
+
+    <!-- BOX 3: Theme Switcher using switch-case -->
+    <div class="box">
+        <h3>Theme Switcher</h3>
+        <button onclick="applyTheme('light')">Light</button>
+        <button onclick="applyTheme('dark')">Dark</button>
+        <button onclick="applyTheme('neon')">Neon</button>
+    </div>
+
+    <!-- BOX 4: Play Sound -->
+    <div class="box">
+        <h3>Sound Trigger</h3>
+        <button onclick="playBeep()">Play Beep</button>
+    </div>
+
+    <!-- BOX 5: Live Clock -->
+    <div class="box">
+        <h3>Live Clock</h3>
+        <div id="clock"></div>
+    </div>
+
+</div>
+
+<script>
+
+
+function changeBG(color){
+    document.getElementById("color-box").style.background = color;
+}
+
+
+
+let count = 0;
+
+function useCounter(callbackFunction){
+    // higher-order function calling callback
+    count = callbackFunction(count);
+    document.getElementById("counter-display").innerText = count;
+}
+
+function addOne(num){ return num + 1; }
+function subOne(num){ return num - 1; }
+
+
+
+function applyTheme(theme){
+    switch(theme){
+        case "light":
+            document.body.style.background = "#f0f0f0";
+            document.body.style.color = "black";
+            break;
+
+        case "dark":
+            document.body.style.background = "#111";
+            document.body.style.color = "white";
+            break;
+
+        case "neon":
+            document.body.style.background = "#0f002b";
+            document.body.style.color = "#39ff14";
+            break;
+
+        default:
+            alert("Unknown theme!");
+    }
+}
+
+
+
+function playBeep(){
+    let beep = new Audio("https://www.soundjay.com/buttons/sounds/beep-07.mp3");
+    beep.play();
+}
+
+
+
+function updateClock(){
+    document.getElementById("clock").innerText = new Date().toLocaleTimeString();
+}
+setInterval(updateClock, 1000);
+updateClock();
+
+</script>
+</body>
+</html>
