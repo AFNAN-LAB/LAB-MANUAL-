@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="lab7.css">
+
+    </head>
+    <body>
+        
+    
+    <h1>Javascript fundamentals and console programming</h1>
+    <p>following are the tasks</p>
+    <h2>Task1: Click on the following button</h2>
+    <button id="afnan" onclick="task1()">Task1: Show name and registration</button>
+    <h2>Task2: Enter the following and then click the button</h2>
+    <p>enter 1st number <button onclick="">24</button><br>
+    <p>enter 2nd number <button onclick="">3</button><br>
+
+    <br><button onclick="task2()">Task2: Arithmetic and comparison operations <br></button>
+    
+    <script>
+        function task1(){
+            var name=prompt("Enter your name:");
+            var reg=prompt("Enter your reg: ");
+            alert("Your name is:"+ name+ "Your reg is:"+reg);
+
+        }
+
+        function task2(){
+            var x= parseFloat(prompt("Enter first number: "));
+            var y=parseFloat(prompt("Enter second  number: "));
+
+            var sum= x+y;
+            var diff= x-y;
+            var prod= x*y;
+            var quot= x/y;
+            var comp= x>y;
+
+            var result= "sum: "+ sum + "\n" +"Difference: " + diff + "\n"  
+            + "Product" + prod + "\n" + "Quotient: " + quot + "\n" + "Comparison (x>y)" + comp ; 
+            alert(result);
+        }
+        
+       
+    </script>
+
+</body>
+</html>
