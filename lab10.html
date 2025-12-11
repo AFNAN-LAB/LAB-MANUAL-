@@ -1,0 +1,29 @@
+<html>
+    <body>
+        <h2>Add students</h2>
+        <input type="text" id="name" placeholder="Enter Name">
+        <input type="text" id="roll" placeholder="Enter Roll#">
+        <input type="number" id="cgpa" placeholder="Enter CGPA">
+        <button onclick="addStudents()">Add Students</button>
+        <script>
+            let students=[];
+
+            function Student(name,roll,cgpa){
+                this.name=name;
+                this.roll=roll;
+                this.cgpa=cgpa;
+            }
+            function addStudent(){
+                let name= document.getElementById("name").value;
+                let roll=document.getElementById("roll").value;
+                let cgpa=document.getElementById("cgpa").value;
+                let student= new Studsent(name,roll,cgpa);
+                students.push(student);
+
+                console.log(students);
+                alert("Student Added!");
+            }
+
+        </script>
+    </body>
+</html>
