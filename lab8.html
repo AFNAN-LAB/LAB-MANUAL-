@@ -1,46 +1,145 @@
-<html>
-    <head>
-        <link rel="stylesheet" href="lab7.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Interactive Control Panel</title>
 
-    </head>
-    <body>
-        
-    
-    <h1>Javascript fundamentals and console programming</h1>
-    <p>following are the tasks</p>
-    <h2>Task1: Click on the following button</h2>
-    <button id="afnan" onclick="task1()">Task1: Show name and registration</button>
-    <h2>Task2: Enter the following and then click the button</h2>
-    <p>enter 1st number <button onclick="">24</button><br>
-    <p>enter 2nd number <button onclick="">3</button><br>
-
-    <br><button onclick="task2()">Task2: Arithmetic and comparison operations <br></button>
-    
-    <script>
-        function task1(){
-            var name=prompt("Enter your name:");
-            var reg=prompt("Enter your reg: ");
-            alert("Your name is:"+ name+ "Your reg is:"+reg);
-
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #141e30, #243b55);
+            color: white;
+            text-align: center;
+            padding: 30px;
         }
 
-        function task2(){
-            var x= parseFloat(prompt("Enter first number: "));
-            var y=parseFloat(prompt("Enter second  number: "));
-
-            var sum= x+y;
-            var diff= x-y;
-            var prod= x*y;
-            var quot= x/y;
-            var comp= x>y;
-
-            var result= "sum: "+ sum + "\n" +"Difference: " + diff + "\n"  
-            + "Product" + prod + "\n" + "Quotient: " + quot + "\n" + "Comparison (x>y)" + comp ; 
-            alert(result);
+        h1 {
+            margin-bottom: 5px;
         }
-        
-       
-    </script>
+
+        .subtitle {
+            opacity: 0.8;
+            margin-bottom: 30px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 25px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .btn {
+            padding: 15px;
+            border: none;
+            background: #00c6ff;
+            color: black;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+        }
+
+        .box {
+            background: #ffb347;
+            height: 120px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: black;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+
+        .move {
+            background: #90ee90;
+        }
+
+        .card {
+            background: #fff;
+            color: black;
+            padding: 15px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.4s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>⚙️ Smart Interactive Control Panel</h1>
+<p class="subtitle">Each element reacts differently — explore the interactions!</p>
+
+<div class="container">
+
+    <button class="btn" onclick="changeColor(this)">
+        Change My Color
+    </button>
+
+    <button class="btn" onclick="resizeButton(this)">
+        Resize Me
+    </button>
+
+    <div class="box" onclick="rotateBox(this)">
+        Click to Rotate
+    </div>
+
+    <div class="box move" onmouseover="moveBox(this)">
+        Hover to Move
+    </div>
+
+    <div class="card" onclick="toggleText(this)">
+        <h3>Click Me</h3>
+        <p class="hidden">🎉 Surprise! Text Revealed</p>
+    </div>
+
+</div>
+
+<script>
+    function changeColor(element) {
+        element.style.background =
+            element.style.background === "orange" ? "#00c6ff" : "orange";
+    }
+
+    function resizeButton(element) {
+        element.style.padding =
+            element.style.padding === "30px" ? "15px" : "30px";
+    }
+
+    function rotateBox(element) {
+        element.style.transform =
+            element.style.transform === "rotate(180deg)"
+                ? "rotate(0deg)"
+                : "rotate(180deg)";
+    }
+
+    function moveBox(element) {
+        element.style.transform = "translateX(20px)";
+    }
+
+    function toggleText(element) {
+        const text = element.querySelector("p");
+        text.style.display =
+            text.style.display === "block" ? "none" : "block";
+    }
+</script>
 
 </body>
 </html>
+
